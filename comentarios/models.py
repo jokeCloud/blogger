@@ -7,12 +7,12 @@ from posts.models import Post
 
 # Create your models here.
 class Comentario(models.Model):
-    nome_comentario = models.CharField(max_length=150)
+    nome_comentario = models.CharField(max_length=150, verbose_name='Nome')
     email_comentario = models.EmailField(verbose_name='Email')
-    comentario = models.TextField()
+    comentario = models.TextField(verbose_name='Comentário')
     post_comentario = models.ForeignKey(Post, on_delete=models.CASCADE)
     usuario_comentario = models.ForeignKey(
-        User, on_delete=models.DO_NOTHING, verbose_name='Usuário')
+        User, on_delete=models.DO_NOTHING, verbose_name='Usuário', blank=True, null=True)  # noqa
     data_comentario = models.DateTimeField(
         default=timezone.now, verbose_name='Data')
     publicado_comentario = models.BooleanField(
