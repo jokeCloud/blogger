@@ -74,6 +74,10 @@
                 {{ visible_field|as_crispy_field }}
             {% endfor %}
             
+            <!-- recaptcha
+            -->
+            <div class="g-recaptcha mb-2" data-sitekey="6Lfey3IjAAAAAHF3eTialRql7mD60NJ_jRDl1Yek"></div>
+
             {% include 'parciais/_messages.html' %}
             
             <input id="envia_comentario" type="submit" class="btn btn-primary" value="Enviar">
